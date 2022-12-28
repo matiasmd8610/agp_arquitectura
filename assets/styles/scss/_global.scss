@@ -1,0 +1,257 @@
+/*FONTS
+*****************************************/
+/* @font-face {
+    font-family: 'Avenir';
+    src: url('../../assets/fonts/Avenir-Book.eot');
+    src: url('../../assets/fonts/Avenir-Book.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/Avenir-Book.woff') format('woff'),
+        url('../../assets/fonts/Avenir-Book.ttf') format('truetype'),
+        url('../../assets/fonts/Avenir-Book.svg#Avenir-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../assets/fonts/Avenir-Black.eot');
+    src: url('../../assets/fonts/Avenir-Black.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/Avenir-Black.woff') format('woff'),
+        url('../../assets/fonts/Avenir-Black.ttf') format('truetype'),
+        url('../../assets/fonts/Avenir-Black.svg#Avenir-Black') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+} */
+
+/*GENERALS
+*****************************************/
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Avenir', sans-serif;
+    line-height: 1.3;
+    color: $color-main;
+    font-size: 1.6rem;
+}
+
+.container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+main {
+    min-height: calc(100vh - 324px);
+}
+
+section {
+    margin: 1.5rem 0 0;
+    padding: 1.5rem 0;
+    @include media-breakpoint-up(lg) {
+        padding: 2rem 0;
+        margin: 3rem 0 0;
+    }
+}
+
+p {
+    margin-bottom: .5rem;
+}
+
+figure {
+    margin: 0;
+}
+
+/*HEADINGS
+*******************************************/
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.1;
+    color: $color-blue-main;
+    font-family: 'Source Sans Pro';
+    text-align: left;
+    letter-spacing: -0.02em;
+}
+
+h1, h2 {
+    position: relative;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2rem;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    font-size: 1.75rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 2.2rem;
+    }
+}
+
+/*BUTTONS
+********************************/
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    border: 0;
+    padding: 0.35rem 1.5rem;
+    font-weight: 400;
+    min-width: 120px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease-in;
+    letter-spacing: 0.02em;
+    margin-top: 1rem;
+
+    &-primary {
+        background-color: $color-blue-secondary;
+        &:hover {
+            background-color: $color-blue-main;
+        }
+    }
+
+    &-secondary {
+        background-color: transparent;
+        border: 2px solid #fff;
+        &:hover {
+            background-color: #fff;
+            color: $color-blue-main;
+            border-color: #fff;
+        }
+    }
+
+    &-third {
+        background-color: transparent;
+        border: 2px solid $color-blue-main;
+        &:hover {
+            background-color: $color-blue-main;
+            color: #fff;
+            border-color: $color-blue-main;
+        }
+    }
+
+    &-link {
+        padding: 0.35rem 0;
+        display: flex; 
+        align-items: center;
+        text-decoration: none;
+        color: $color-blue-main;
+        letter-spacing: -0.01em;
+        i {
+            transition: all 0.3s ease;
+            margin-left: 0.2rem;
+            font-size: .7rem;
+        }
+        &:hover {
+            color: $color-blue-third;
+            i {
+                transform: translateX(3px);
+            }
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+a {
+    color: $color-blue-main;
+    &:hover {
+        color: $color-blue-secondary;
+    }
+}
+
+.hero {
+    padding: 1rem 0.5rem 1.75rem;
+    margin-top: 5rem;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+        padding: 2rem;
+    }
+    
+    &:after {
+        width: 100%;
+        content: '';
+        display: block;
+        height: 70%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: $color-blue-main;
+        z-index: -1;
+    }
+
+    &-text {
+        padding: 1.25rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        align-items: flex-start;
+        box-shadow: 0 0 8px #ccc;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            min-height: 300px;
+            box-shadow: none;
+            padding: 2rem;
+        }
+
+        div {
+            display: flex;
+            margin-bottom: 0.35rem;
+
+            i {
+                margin-right: .75rem;
+            }
+        }
+    }
+
+    &-image {
+        height: 280px;
+        @include media-breakpoint-up(lg) {
+            height: 400px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+}
+
+#scroll-indicator {
+    background-color: transparent;
+    height: 5px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    @include media-breakpoint-down(lg) {
+        //background-color: rgba($color: #000, $alpha: 0.8) !important;
+        background-color: $color-blue-secondary;
+    }
+    span {
+        display: block;
+        background-color: $color-blue-third;
+        height: 100%;
+        width: 0;
+        transition: all 0.2s ease;
+    }
+}
+
+.intro {
+    font-size: 1.15rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 1.35rem;
+    }
+}
+

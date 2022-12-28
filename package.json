@@ -1,0 +1,20 @@
+{
+  "name": "agp_arquitectura",
+  "version": "1.0.0",
+  "description": "AGP Arquitectura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded assets/styles/scss:assets/styles/css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/styles/scss:assets/styles/css"
+  },
+  "author": "Matias Di Iorio / Mariana Serafin",
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
