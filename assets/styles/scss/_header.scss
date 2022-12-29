@@ -19,8 +19,9 @@ header {
     .navbar {
         padding: .85rem 0;
         @include media-breakpoint-down(xl) {
-            background-color: $color-blue-secondary;
+            background-color: $color-blue-main;
         }
+
         .navbar-toggler {
             min-height: 40px;
             padding: 8px 6px;
@@ -67,21 +68,9 @@ header {
 
         .navbar-brand {
             img {
-                &.logo-blue {
-                    display: block;
-                    @include media-breakpoint-down(xl) {
-                        display: none;
-                    }
-                }
-                &.logo-white {
-                    display: none;
-                    @include media-breakpoint-down(xl) {
-                        display: block;
-                    }
-                }
                 transition: all 0.5s ease;
                 @include media-breakpoint-down(lg) {
-                    width: 180px;
+                    width: 140px;
                 }
             }
         }
@@ -107,7 +96,7 @@ header {
                     padding: 1.25rem 0 0;
                 }
                 .nav-item {
-                    border-right: 1px solid $color-main;
+                    border-right: 1px solid $color-black;
                     @include media-breakpoint-down(xl) {
                         margin-bottom: .75rem;
                         text-align: center;
@@ -130,7 +119,7 @@ header {
                             font-size: 0.7rem;
                         }
                         &:hover {
-                            color: $color-blue-third;
+                            color: $color-blue-main;
                             @include media-breakpoint-up(xl) {
                                 transform: translateY(-4px);
                             }
@@ -138,64 +127,7 @@ header {
                     }
                 }
             }
-            .language-selector {
-                display: flex;
-                list-style: none;
-                background-color: $color-blue-main;
-                color: #fff;
-                padding: 0.1rem 0.25rem;
-                position: absolute;
-                right: 0;
-                top: 27px;
-                @include media-breakpoint-down(xl) {
-                    position: relative;
-                    background-color: transparent !important;
-                    top: initial;
-                    justify-content: center;
-                    padding-top: 15px;
-                    border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
-                }
 
-                li {
-                    position: relative;
-                    a {
-                        @include media-breakpoint-down(lg) {
-                            color: #fff !important;
-                        }
-                    }
-                    &.active {
-                        a {
-                            font-weight: 700;
-                        }
-                    }
-                    &:first-child {
-                        margin-right: .5rem;
-                        &:after {
-                            content: '';
-                            display: block;
-                            height: 20px;
-                            width: 1px;
-                            background-color: #fff;
-                            position: absolute;
-                            right: -6px;
-                            top: 3px;
-                            @include media-breakpoint-down(lg) {
-                                background-color: #fff !important;
-                            }
-                        }
-                    }
-                    a {
-                        text-decoration: none;
-                        font-size: 0.75rem;
-                        padding: 0.2rem;
-                        color: #fff;
-                        transition: all 0.3s ease;
-                        &:hover {
-                            color: $color-blue-third  
-                        }
-                    }
-                }
-            }
         }
     }
 }
