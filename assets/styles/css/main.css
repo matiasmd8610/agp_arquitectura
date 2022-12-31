@@ -11558,6 +11558,14 @@ main {
   min-height: 100vh;
 }
 
+a {
+  transition: all 0.3s ease;
+}
+a:focus {
+  outline: 1px dotted #f4f5f9;
+  outline-offset: 2px;
+}
+
 section {
   margin: 1.5rem 0 0;
   padding: 1.5rem 0;
@@ -11757,7 +11765,7 @@ a:hover {
 }
 #scroll-indicator span {
   display: block;
-  background-color: #2D6073;
+  background-color: #65B8A6;
   height: 100%;
   width: 0;
   transition: all 0.2s ease;
@@ -11783,17 +11791,81 @@ header {
   transition: all 0.35s ease;
 }
 header.sticky {
-  box-shadow: 0px 0px 10px #222;
+  border-bottom: 1px solid #C1C1C1;
   background-color: #fff;
   position: fixed;
   z-index: 999;
 }
-header .navbar {
-  padding: 0.85rem 0;
+header.sticky .header-top {
+  display: none;
 }
-@media (max-width: 1199.98px) {
-  header .navbar {
-    background-color: #2D6073;
+header.sticky .header-middle {
+  display: none;
+}
+header.sticky .header-bottom {
+  top: 0;
+  background-color: #fff;
+  position: relative;
+}
+header .header-top {
+  background-color: #222;
+  padding: 1.4rem 0;
+}
+header .header-top ul {
+  display: flex;
+}
+header .header-top ul li {
+  display: flex;
+  margin-right: 1.5rem;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+@media (min-width: 992px) {
+  header .header-top ul li {
+    font-size: 1.4rem;
+  }
+}
+header .header-top ul li:first-child {
+  border-right: 1px solid #C1C1C1;
+  padding-right: 1.5rem;
+}
+header .header-top ul li a {
+  color: #C1C1C1;
+}
+header .header-top ul li a:hover, header .header-top ul li a:focus {
+  color: #fff;
+}
+header .header-top ul li i {
+  color: #C1C1C1;
+  margin-right: 1rem;
+}
+header .header-middle {
+  background-image: url("../../images/header_bg.png");
+  background-repeat: no-repeat;
+  height: 50px;
+  background-position: center bottom;
+  background-size: contain;
+}
+header .header-bottom {
+  position: absolute;
+  width: 100%;
+  top: 38px;
+  left: 0;
+}
+header .navbar {
+  padding: 0.85rem 0 0;
+  /*         @include media-breakpoint-down(xl) {
+              background-color: $color-blue-main;
+          } */
+}
+header .navbar > .container {
+  background-color: #fff;
+}
+@media (min-width: 992px) {
+  header .navbar > .container {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 header .navbar .navbar-toggler {
@@ -11826,7 +11898,7 @@ header .navbar .navbar-toggler-icon span {
   display: block;
   width: 26px;
   height: 2px;
-  background-color: #fff;
+  background-color: #2D6073;
   margin-bottom: 8px;
   transition: all 0.25s ease-in-out;
 }
@@ -11849,7 +11921,7 @@ header .navbar .navbar-collapse {
     background-color: #2D6073;
     position: absolute;
     left: 0;
-    top: 70px;
+    top: 84px;
     width: 100%;
     padding: 0 15px;
   }
@@ -11869,9 +11941,6 @@ header .navbar .navbar-collapse {
     padding: 1.25rem 0 0;
   }
 }
-header .navbar .navbar-collapse .navbar-nav .nav-item {
-  border-right: 1px solid #15161D;
-}
 @media (max-width: 1199.98px) {
   header .navbar .navbar-collapse .navbar-nav .nav-item {
     margin-bottom: 0.75rem;
@@ -11886,18 +11955,13 @@ header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   padding: 0.15rem 0.7rem;
   text-transform: uppercase;
   transition: all 0.25s ease-in-out;
-  color: #2D6073;
-}
-@media (max-width: 1199.98px) {
-  header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
-    font-size: 1rem;
-    color: #fff;
-  }
+  color: #1F192F;
+  font-weight: 500;
 }
 @media (min-width: 1200px) {
   header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
-    padding-right: 0.6rem;
-    font-size: 0.7rem;
+    padding-right: 2rem;
+    font-size: 1.4rem;
   }
 }
 header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: $font-family-main;
     line-height: 1.4;
     color: $color-black;
     font-size: 1.6rem;
@@ -19,6 +19,14 @@ body {
 
 main {
     min-height: calc(100vh);
+}
+
+a {
+    transition: all 0.3s ease;
+    &:focus {
+        outline: 1px dotted $color-gray-light;
+        outline-offset: 2px;
+    }
 }
 
 section {
@@ -215,7 +223,7 @@ a {
     }
     span {
         display: block;
-        background-color: $color-blue-main;
+        background-color: $color-green;
         height: 100%;
         width: 0;
         transition: all 0.2s ease;
